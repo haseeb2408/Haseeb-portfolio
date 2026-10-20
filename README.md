@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Haseeb Ahmed — AI Engineer Portfolio
 
 Next.js 16 · Tailwind CSS v4 · Framer Motion · TypeScript
@@ -32,3 +33,4 @@ src/
 ## Deploy
 
 Push to GitHub and import the repo on [Vercel](https://vercel.com/new). No environment variables are needed.
+=======
