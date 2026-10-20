@@ -18,6 +18,8 @@ export const profile = {
   github: "https://github.com/haseeb2408",
   linkedin: "https://www.linkedin.com/in/haseeb-ahmed-a20777228",
   resume: "/Haseeb-Ahmed-Resume.pdf",
+  // drop your photo at public/profile.jpg (portrait, roughly 4:5)
+  photo: "/profile.jpg",
   available: true,
 };
 

@@ -40,8 +40,9 @@ function Orbit() {
                   key={item}
                   className="absolute"
                   style={{
-                    left: `${50 + Math.cos(angle) * 50}%`,
-                    top: `${50 + Math.sin(angle) * 50}%`,
+                    // rounded so server and browser serialise the same string
+                    left: `${(50 + Math.cos(angle) * 50).toFixed(3)}%`,
+                    top: `${(50 + Math.sin(angle) * 50).toFixed(3)}%`,
                     transform: "translate(-50%, -50%)",
                   }}
                 >
