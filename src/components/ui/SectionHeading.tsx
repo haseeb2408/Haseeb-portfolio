@@ -19,7 +19,7 @@ const word: Variants = {
 
 export function SectionHeading({ index, eyebrow, title, accent, description }: Props) {
   return (
-    <div className="mb-14 md:mb-20">
+    <div className="mb-10 md:mb-14">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}

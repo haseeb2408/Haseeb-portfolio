@@ -7,7 +7,7 @@ import { certificates } from "@/data/portfolio";
 
 export function Certificates() {
   return (
-    <section className="relative mx-auto max-w-7xl px-5 pb-28 sm:px-8 md:pb-40">
+    <section className="relative mx-auto max-w-7xl px-5 pb-16 sm:px-8 md:pb-20">
       <div className="mb-10 flex items-end justify-between gap-6">
         <div>
           <p className="font-mono text-xs tracking-[0.25em] text-cyan uppercase">Credentials</p>

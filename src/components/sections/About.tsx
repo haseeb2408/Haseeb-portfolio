@@ -131,7 +131,7 @@ const journey = [
 
 export function About() {
   return (
-    <section id="about" className="relative mx-auto max-w-7xl px-5 py-28 sm:px-8 md:py-40">
+    <section id="about" className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 md:py-20">
       <SectionHeading
         index="01"
         eyebrow="About"

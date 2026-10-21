@@ -76,7 +76,7 @@ function Orbit() {
 
 export function Skills() {
   return (
-    <section id="skills" className="relative overflow-hidden py-28 md:py-40">
+    <section id="skills" className="relative overflow-hidden py-16 md:py-20">
       <div className="pointer-events-none absolute top-1/2 left-0 h-[600px] w-[600px] -translate-y-1/2 rounded-full bg-violet/10 blur-[160px]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading

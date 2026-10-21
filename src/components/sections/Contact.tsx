@@ -30,7 +30,7 @@ export function Contact() {
     "w-full rounded-xl border border-line bg-ink/60 px-4 py-3.5 text-sm text-white placeholder:text-muted transition focus:border-cyan/60 focus:outline-none focus:ring-4 focus:ring-cyan/10";
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28 md:py-40">
+    <section id="contact" className="relative overflow-hidden py-16 md:py-20">
       <div className="pointer-events-none absolute bottom-0 left-1/2 h-[600px] w-[900px] -translate-x-1/2 translate-y-1/2 rounded-full bg-gradient-to-r from-cyan/25 via-violet/25 to-lime/15 blur-[140px]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="text-center">

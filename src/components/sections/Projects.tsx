@@ -212,7 +212,7 @@ export function Projects() {
   const list = filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="relative py-28 md:py-40">
+    <section id="projects" className="relative py-16 md:py-20">
       <div className="pointer-events-none absolute top-40 right-0 h-[500px] w-[500px] rounded-full bg-cyan/10 blur-[160px]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading

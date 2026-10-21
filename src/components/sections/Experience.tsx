@@ -13,7 +13,7 @@ export function Experience() {
   const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 25 });
 
   return (
-    <section id="experience" className="relative mx-auto overflow-x-clip max-w-7xl px-5 py-28 sm:px-8 md:py-40">
+    <section id="experience" className="relative mx-auto overflow-x-clip max-w-7xl px-5 py-16 sm:px-8 md:py-20">
       <SectionHeading
         index="03"
         eyebrow="Experience"

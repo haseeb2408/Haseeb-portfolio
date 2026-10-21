@@ -144,7 +144,7 @@ export function AskAI() {
   };
 
   return (
-    <section id="ask" className="relative mx-auto max-w-7xl px-5 py-28 sm:px-8 md:py-40">
+    <section id="ask" className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 md:py-20">
       <SectionHeading
         index="05"
         eyebrow="Interactive"

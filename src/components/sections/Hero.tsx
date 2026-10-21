@@ -155,8 +155,9 @@ export function Hero() {
   const role = useTypewriter(profile.roles);
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 160]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  // drift up while fading so the content never slides into the marquee below
+  const y = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
     <section ref={ref} id="top" className="relative flex min-h-svh flex-col overflow-hidden">
