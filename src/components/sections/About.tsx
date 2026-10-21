@@ -56,49 +56,61 @@ function Portrait() {
   const [missing, setMissing] = useState(false);
 
   return (
-    <div data-cursor="hover" className="group relative aspect-[4/5] h-full w-full overflow-hidden rounded-3xl border border-line bg-panel md:aspect-auto md:min-h-[380px]">
-      {missing ? (
-        <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-cyan/20 via-panel to-violet/20">
-          <div className="text-center">
-            <span className="font-display text-7xl font-bold text-gradient">HA</span>
-            <p className="mt-3 font-mono text-[10px] text-muted">add public/profile.jpg</p>
-          </div>
-        </div>
-      ) : (
-        <Image
-          src={profile.photo}
-          alt={profile.name}
-          fill
-          sizes="(min-width: 768px) 33vw, 100vw"
-          onError={() => setMissing(true)}
-          className="object-cover grayscale-[35%] transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
+    <div
+      data-cursor="hover"
+      className="group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-line bg-[radial-gradient(circle_at_50%_40%,rgba(45,226,230,0.14),transparent_65%)] bg-panel p-6"
+    >
+      <div className="grid-bg absolute inset-0 opacity-50" />
+
+      <div className="relative mx-auto my-auto aspect-square w-full max-w-[300px]">
+        {/* spinning gradient ring */}
+        <div
+          className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_0deg,var(--color-cyan),var(--color-violet),var(--color-lime),var(--color-cyan))] opacity-80 blur-[1px]"
+          style={{ animation: "orbit-spin 8s linear infinite" }}
         />
-      )}
+        <div className="absolute -inset-6 rounded-full bg-cyan/10 blur-2xl transition-opacity duration-700 group-hover:bg-cyan/20" />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
+        <div className="absolute inset-0 overflow-hidden rounded-full bg-ink">
+          {missing ? (
+            <div className="grid h-full place-items-center bg-gradient-to-br from-cyan/20 via-panel to-violet/20">
+              <span className="font-display text-7xl font-bold text-gradient">HA</span>
+            </div>
+          ) : (
+            <Image
+              src={profile.photo}
+              alt={profile.name}
+              fill
+              priority
+              sizes="(min-width: 768px) 300px, 80vw"
+              onError={() => setMissing(true)}
+              className="scale-[1.12] object-cover transition duration-700 group-hover:scale-[1.18]"
+            />
+          )}
+          <motion.div
+            className="absolute inset-x-0 h-14 bg-gradient-to-b from-transparent via-cyan/30 to-transparent"
+            animate={{ top: ["-15%", "105%"] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "linear" }}
+          />
+        </div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 1.25 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute inset-x-[16%] top-[12%] bottom-[30%]"
-      >
-        {["top-0 left-0 border-t-2 border-l-2", "top-0 right-0 border-t-2 border-r-2", "bottom-0 left-0 border-b-2 border-l-2", "right-0 bottom-0 border-r-2 border-b-2"].map((c) => (
-          <span key={c} className={`absolute h-6 w-6 border-lime ${c}`} />
-        ))}
-        <span className="absolute -top-6 left-0 rounded-sm bg-lime px-1.5 py-0.5 font-mono text-[10px] font-semibold text-ink">
-          person: haseeb 0.99
-        </span>
-      </motion.div>
+        {/* detector box sized to the face in profile.png */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1.4 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute top-[16%] left-[41%] h-[34%] w-[27%]"
+        >
+          {["top-0 left-0 border-t-2 border-l-2", "top-0 right-0 border-t-2 border-r-2", "bottom-0 left-0 border-b-2 border-l-2", "right-0 bottom-0 border-r-2 border-b-2"].map((c) => (
+            <span key={c} className={`absolute h-3.5 w-3.5 border-lime ${c}`} />
+          ))}
+          <span className="absolute -top-5 left-0 rounded-sm bg-lime px-1.5 py-0.5 font-mono text-[9px] font-semibold whitespace-nowrap text-ink">
+            person 0.99
+          </span>
+        </motion.div>
+      </div>
 
-      <motion.div
-        className="absolute inset-x-0 h-16 bg-gradient-to-b from-transparent via-cyan/25 to-transparent"
-        animate={{ top: ["-10%", "100%"] }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "linear" }}
-      />
-
-      <div className="absolute inset-x-5 bottom-5 flex items-end justify-between">
+      <div className="relative mt-6 flex items-end justify-between">
         <div>
           <p className="font-display text-lg font-semibold text-white">{profile.name}</p>
           <p className="font-mono text-[11px] text-cyan">{profile.role}</p>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Haseeb Ahmed — AI Engineer Portfolio
 
 Next.js 16 · Tailwind CSS v4 · Framer Motion · TypeScript
